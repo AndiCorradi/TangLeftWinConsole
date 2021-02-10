@@ -1,0 +1,4 @@
+Anforderungen:
+
+- Benutzer soll den aktuellen Kontostand eingeben und erfahren wieviel Geld pro Tag noch bis zum nächsten Zahltag übrig bleibt.
+- Für das Datum "Zahltag" soll ein Default Wert vorgegeben sein der verändert werden kann.
