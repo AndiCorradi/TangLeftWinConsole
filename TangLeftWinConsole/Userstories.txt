@@ -2,3 +2,12 @@ Anforderungen:
 
 - Benutzer soll den aktuellen Kontostand eingeben und erfahren wieviel Geld pro Tag noch bis zum nächsten Zahltag übrig bleibt.
 - Für das Datum "Zahltag" soll ein Default Wert vorgegeben sein der verändert werden kann.
+
+- Programm ist nun lauffähig.
+  
+  TODO: 
+- Code besser strukturieren - done
+- Error Handling einbauen - done
+- fortlaufender Programmablauf einbauen - done
+- Programm automatisch beenden bei payday = current day - done
+- Output schöner formatieren
