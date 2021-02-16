@@ -10,4 +10,4 @@ Anforderungen:
 - Error Handling einbauen - done
 - fortlaufender Programmablauf einbauen - done
 - Programm automatisch beenden bei payday = current day - done
-- Output schöner formatieren
+- Output schöner formatieren - done
