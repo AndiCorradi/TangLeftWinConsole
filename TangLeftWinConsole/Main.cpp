@@ -2,6 +2,7 @@
 #include <time.h>
 #include <string>
 #include <conio.h> // req for_get(ch)
+#include <iomanip>
 
 using namespace std;
 
@@ -46,6 +47,7 @@ int main()
 // Console Banner
 
 void ConsoleBanner()
+
 {
 	system("cls");
 	cout << "====================TangLeft====================" << endl;
@@ -53,6 +55,14 @@ void ConsoleBanner()
 	cout << "================================================" << endl;
 	cout << endl;
 }
+
+//{
+//	system("cls");
+//	cout << "====================TangLeft====================" << endl;
+//	cout << " (calculates the daily budget until nex payday) " << endl;
+//	cout << "================================================" << endl;
+//	cout << endl;
+//}
 
 // UserInput
 
@@ -75,7 +85,7 @@ int UserInputPayDay()
 	catch (exception& err)
 	{
 		ConsoleBanner();
-		cout << "\ninvalid input. Please enter the payday as number (press Enter to continue)";
+		cout << "\ninvalid input. Please enter the payday as number\n\n(press Enter to continue)";
 		getchar();
 		goto InputPayDay;
 	}
@@ -83,7 +93,7 @@ int UserInputPayDay()
 	if (PayDay < 1 || PayDay > 31)
 	{
 		ConsoleBanner();
-		cout << "\n" << "invalid input. Please enter the payday as number >1 <31 (press Enter to continue)";
+		cout << "\n" << "invalid input. Please enter the payday as number >1 <31\n\n(press Enter to continue)";
 		getchar();
 		goto InputPayDay;
 	}
@@ -91,14 +101,14 @@ int UserInputPayDay()
 	else if (PayDay > AmmountDaysOfCurrentMonth)
 	{
 		ConsoleBanner();
-		cout << "\n" << "This Month has less days than your input. Please enter again. (press Enter to continue)";
+		cout << "\n" << "This Month has less days than your input. Please enter again.\n\n(press Enter to continue)";
 		getchar();
 		goto InputPayDay;
 	}
 	else if (PayDay == CurrentDayOfMonth)
 	{
 		ConsoleBanner();
-		cout << "\n" << "Payday can't be current date. Please try again tomorrow (press Enter to Exit)";
+		cout << "\n" << "Payday can't be current date.\nPlease try again tomorrow\n\n(press Enter to Exit)";
 		getchar();
 		exit(0);
 		//goto InputPayDay;
@@ -118,7 +128,7 @@ int UserInputBalance()
 	{
 		ConsoleBanner();
 		cin.clear();
-		cout << "Input invalid. Please enter a positive number. (press Enter to continue)";
+		cout << "Input invalid. Please enter a positive number.\n\n(press Enter to continue)";
 		cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Clears the Input Buffer
 		getchar();
 		goto InputBalance;
@@ -129,7 +139,7 @@ int UserInputBalance()
 		if (Balance < 1)
 		{
 			ConsoleBanner();
-			cout << "Balance can't be below 1 for this calculation. Please enter again. (press Enter to continue)";
+			cout << "Balance can't be below 1 for this calculation.\nPlease enter again.\n\n(press Enter to continue)";
 			cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Clears the Input Buffer
 			getchar();
 			goto InputBalance;
@@ -176,12 +186,10 @@ void ResultConsoleOutput()
 
 {
 	ConsoleBanner();
-	cout << "your daily budget until next payday: " << DailyBudget;
+	cout << "   your daily budget until next payday: " << DailyBudget << "\n" <<endl;
+	cout << setw(18) << DaysToPayday << " days to go" << endl;
 	cout << endl;
-	cout << endl;
-	cout << DaysToPayday << " days to go" << endl;
-	cout << endl << endl;
-	cout << "Esc to Exit or anykey to restart programm" << endl;
+	cout << "   Esc to Exit or anykey to restart programm" << endl;
 }
 
 int AmmountOfDaysOfCurrentMonth()
