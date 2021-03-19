@@ -7,8 +7,9 @@
 #include <iostream> // req. for cout (Console output)
 #include <time.h> // req. to calculate "AmmountOfDaysOfCurrentMonth" and "CalcCurrentDaysOfMonth"
 #include <string> // req. for getline (read userinput as string)
-#include <conio.h> // req. for_get(ch) (returns ASCI int value of a keypress 
+#include <conio.h> // req. for_get(ch) (returns ASCI int value of a keypress)
 #include <iomanip> // req. to format console output (setw)
+#include <limits>
 
 using namespace std; // define standard namespace
 
@@ -78,7 +79,7 @@ int UserInputPayDay() // datatype integer function without input parameters
 	{
 		PayDay = stoi(PayDayStr); // convert string to int (int needed for calculation)
 	}
-	catch (exception& err) // if it fails, proceed with console output to inform user.
+	catch (exception&err) // if it fails, proceed with console output to inform user.
 	{
 		ConsoleBanner(); // call void function
 		cout << "\ninvalid input. Please enter the payday as number\n\n(press Enter to continue)"; // console output
@@ -153,13 +154,13 @@ int CalcDaysToPayday(int Payday) // integer function with argument (integer para
 	int DayOfMonth = CalcCurrentDaysOfMonth(); // set and initialize local variable with result of function "CalcCurrentDayOfMonth"
 	int AmmountDaysOfCurrentMonth = AmmountOfDaysOfCurrentMonth(); //set and initialize local variable with result of function "AmmountOfDaysOfCurrentMonth"
 
-	if (DayOfMonth < 24) // check if DayOfMonth is below 24
+	if (DayOfMonth < PayDay) // check if DayOfMonth is below PayDay
 	{
 		DaysToPayday = PayDay - DayOfMonth; // subtract DayOfMonth from PayDay to get DaysToPayDay
 	}
-	else // if DayOfMonth is higher then 24:
+	else // if DayOfMonth is higher then PayDay:
 	{
-		DaysToPayday = AmmountDaysOfCurrentMonth - DayOfMonth + 24; // subtract DayOfMonth from AmmountDaysOfCurrentMonth and add 24 to ger DaysToPayday
+		DaysToPayday = AmmountDaysOfCurrentMonth - DayOfMonth + PayDay; // subtract DayOfMonth from AmmountDaysOfCurrentMonth and add PayDay to get DaysToPayday
 	}
 
 	return DaysToPayday; // returns the result to the main function

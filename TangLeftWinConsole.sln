@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TangLeftWinConsole", "TangLeftWinConsole\TangLeftWinConsole.vcxproj", "{54CA163A-4ECC-426E-9743-A521E4031F5C}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupTangLeftWinConsole", "SetupTangLeftWinConsole\SetupTangLeftWinConsole.vdproj", "{44B0DC90-7F8D-47EA-8C3B-511620D8F663}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,10 @@ Global
 		{54CA163A-4ECC-426E-9743-A521E4031F5C}.Release|x64.Build.0 = Release|x64
 		{54CA163A-4ECC-426E-9743-A521E4031F5C}.Release|x86.ActiveCfg = Release|Win32
 		{54CA163A-4ECC-426E-9743-A521E4031F5C}.Release|x86.Build.0 = Release|Win32
+		{44B0DC90-7F8D-47EA-8C3B-511620D8F663}.Debug|x64.ActiveCfg = Debug
+		{44B0DC90-7F8D-47EA-8C3B-511620D8F663}.Debug|x86.ActiveCfg = Debug
+		{44B0DC90-7F8D-47EA-8C3B-511620D8F663}.Release|x64.ActiveCfg = Release
+		{44B0DC90-7F8D-47EA-8C3B-511620D8F663}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
